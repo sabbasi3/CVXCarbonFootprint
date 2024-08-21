@@ -1,0 +1,24 @@
+You will be using the following commands throughtout the session:
+
+Installation:
+npm install
+npm install -g @angular/common
+npm install -g @angular/cli
+npm install -g primeng
+
+Building & Running:
+ng serve --open --disable-host-check
+
+
+Template:
+this._service.getFunction().subscribe(
+      {
+        next: (response: responseType) => {
+          // something here
+        },
+
+        error: (error) => {
+          console.log(error)
+        }
+      }
+    )
