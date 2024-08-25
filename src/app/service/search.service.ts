@@ -5,9 +5,8 @@ import { makeModel, modelModel } from '../models/make.model';
 import { emissionModel } from '../models/emission.model';
 import { photosModel } from '../models/photos.model';
 
-
 // to be implemented
-const API_KEY = "XYZ123"
+const API_KEY = '8c3587a8ddmsh29f59c10e5e1104p1f5352jsnd8bb419f8565';
 
 const API_HEADERS = {
   'X-RapidAPI-Key': API_KEY,
@@ -34,7 +33,7 @@ export class SearchService {
   emissionModel?: emissionModel;
   photosModel?: photosModel;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getMakes(): Observable<makeModel> {
     const headers = new HttpHeaders(API_HEADERS);
@@ -63,7 +62,6 @@ export class SearchService {
 
     return this.http.post<emissionModel>(API_URL, body, { headers });
   }
-
 
   getPhotos(query: string): Observable<photosModel> {
     //make a get call to https://duckduckgo-image-search.p.rapidapi.com/search/image with params: q

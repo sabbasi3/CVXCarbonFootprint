@@ -1,17 +1,21 @@
 <div class="branding">
-  <!-- to be implemented -->
+  <!-- to be implemented --><img class="logo" src="../../assets/logo.png" />
 </div>
 
 <div class="selection-area">
   <p style="margin-right: 5px">Select a car model:</p>
 
   <!-- To be implemented: -->
-  <p-dropdown placeholder="Select a make"></p-dropdown>
+  <p-dropdown
+    placeholder="Select a make"
+    [options]="makes"
+    (onChange)="onMakeSelect($event.value)"
+  ></p-dropdown>
 </div>
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center">
   <!-- To be implemented: change to photos? -->
-  <div *ngFor="let singleModel of models; index as idx" style="flex-basis: 20%">
+  <div *ngFor="let singlePhoto of photos; index as idx" style="flex-basis: 20%">
     <p-card
       header="{{ selectedMake + ' ' + models[idx] }}"
       [style]="{
@@ -29,7 +33,9 @@
       </ng-template>
 
       <!-- To be implemented: -->
-      <ng-template pTemplate="p-card-content"> </ng-template>
+      <ng-template pTemplate="p-card-content">
+        <div>Emissions: {{ emissions[idx].co2e_lb }} Co2/lb</div>
+      </ng-template>
     </p-card>
   </div>
 </div>
